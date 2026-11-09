@@ -1,53 +1,197 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     margin: 0;
-    background-color: #fff5f5;
-    color: #4a3e3d;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fdf8f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #d63384;
+    background-color: #d81b60;
     color: white;
-    padding: 1rem 2rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+    width: 100%;
+}
+
+.produtos-section {
+    flex: 2;
+    min-width: 300px;
+}
+
+.carrinho-section {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+h2 {
+    color: #d81b60;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-produto {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-produto h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 0.3rem;
+}
+
+/* Feedback 1: Descrição e peso/tamanho */
+.descricao-produto {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.preco {
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-primario {
+    background-color: #d81b60;
+    color: white;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.btn-primario:hover {
+    background-color: #ad1457;
+}
+
+/* Feedback 4: Estilo temporário para o botão "Adicionado!" */
+.btn-adicionado {
+    background-color: #2e7d32 !important;
+    color: white !important;
+}
+
+.btn-secundario {
+    background-color: #f0f0f0;
+    color: #333;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.btn-secundario:hover {
+    background-color: #e0e0e0;
+}
+
+#itens-carrinho {
+    list-style: none;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#itens-carrinho li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.carrinho-vazio {
+    color: #888;
     text-align: center;
+    font-style: italic;
 }
 
-.card button {
-    background-color: #d63384;
+.btn-remover {
+    background: #ff5252;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
-.cart-section {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
+.carrinho-total {
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+}
+
+/* Feedback 2: Bloco de Formas de Pagamento */
+.formas-pagamento {
+    margin-top: 1.5rem;
+    background: #f9f9f9;
+    padding: 0.8rem;
+    border-radius: 6px;
+}
+
+.formas-pagamento h3 {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.4rem;
+}
+
+.formas-pagamento p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: auto;
 }
